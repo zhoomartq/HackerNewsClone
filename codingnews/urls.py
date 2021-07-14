@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views
 
+
 from story.views import frontpage, search, submit, newest, vote, story
 from core.views import signup
+
+
+
 
 urlpatterns = [
     path('', frontpage, name='frontpage'),
@@ -32,4 +36,5 @@ urlpatterns = [
     path('login/', views.LoginView.as_view(template_name='core/login.html'), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
+    
 ]
